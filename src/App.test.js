@@ -39,5 +39,5 @@ describe('Testing Util functions', () => {
     expect(styleTopPos3).toEqual({ top: 200, right: 400 });
     expect(styleTopPos4).toEqual({ top: 100, right: 400 });
     expect(styleTopPos5).toEqual({ top: 0, right: 400 });
-  })
+  });
 })

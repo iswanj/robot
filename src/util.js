@@ -1,3 +1,5 @@
+const itemsPerRow = 5;
+const miniumRow = 1;
 export const getPosition = (x, y) => {
   return {
     top: 500 - (y * 100),
@@ -6,43 +8,30 @@ export const getPosition = (x, y) => {
 };
 
 export const caluclateXValue = index => {
-  const value = index % 5 -6;
-  if (value === -6) {
+  const value = index % itemsPerRow;
+  if (value === 0) {
     return 1;
   }
-  return Math.abs(value);
+  return Math.abs(value - itemsPerRow -1); // reduce 1 because of box numbering start from 1;
 };
 
 export const getTeleportationCordinates = index => {
   return {
     x: caluclateXValue(index), 
-    y: Math.ceil(index/5)
+    y: Math.ceil(index/itemsPerRow)
   }
 };
 
 export const getCordinates = (x, y, command) => {
-  switch (command) {
-    case 'up':
-      if (y < 5) {
-        return { x, y: y + 1}
-      }
-      return { x, y }
-    case 'down':
-      if (y > 1) {
-        return { x, y: y - 1}
-      }
-      return { x, y }
-    case 'left':
-      if (x > 1) {
-        return { x: x - 1, y}
-      }
-      return { x, y }
-    case 'right':
-      if (x < 5) {
-        return { x: x + 1, y}
-      }
-      return { x, y }
-    default:
-      return { x, y }
+  if (command === 'up' && y < itemsPerRow) {
+    return { x, y: y + 1}
+  } else if (command === 'down' && y > miniumRow) {
+    return { x, y: y - 1}
+  } else if (command === 'left' && x > miniumRow) {
+    return { x: x - 1, y}
+  } else if (command === 'right' && x < itemsPerRow) {
+    return { x: x + 1, y}
+  } else {
+    return { x, y }
   }
 };
