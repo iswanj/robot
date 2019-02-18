@@ -23,9 +23,12 @@ const App = () => {
     changeY(yPos);
   };
 
-  const teleport = ({x, y}) => {
-    changeX(x);
-    changeY(y);
+  const teleport = ({x: newX, y: newY}) => {
+    setTimeout(() => {
+      changeX(newX);
+      changeY(newY);
+    }, (Math.abs(x-newX) + Math.abs(y-newY)) * 100); 
+    // dealy teleport duration based on travel distance (how many boxes)
   };
 
   const renderBoxes = () => {
