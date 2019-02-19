@@ -2,6 +2,7 @@
   "name": "robot",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://iswanj.github.io/robot/",
   "dependencies": {
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
@@ -11,7 +12,9 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
-    "eject": "react-app-rewired eject"
+    "eject": "react-app-rewired eject",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -23,8 +26,11 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "gh-pages": "^2.0.1",
+    "jest-dom": "^3.1.2",
     "react-app-rewire-hot-loader": "^2.0.1",
     "react-app-rewired": "^2.1.0",
-    "react-hot-loader": "^4.6.5"
+    "react-hot-loader": "^4.6.5",
+    "react-testing-library": "^5.8.0"
   }
 }

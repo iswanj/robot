@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 
-import robot from './images/robot.svg';
 import up from './images/up.svg';
 import down from './images/down.svg';
 import left from './images/left.svg';
@@ -10,6 +9,8 @@ import right from './images/right.svg';
 import { hot } from 'react-hot-loader';
 
 import { getPosition, getTeleportationCordinates, getCordinates } from './util';
+
+import { Robot } from './components/Robot'; 
 
 const boxCount = 25;
 
@@ -50,25 +51,23 @@ const App = () => {
     <div className="App">
       <div className="playground">
         {renderBoxes()}
-        <div className="robotContainer" style={getPosition(x,y)}>
-          <img src={robot} className="robot" alt="robot" />
-        </div>
+        <Robot positions={getPosition(x,y)} />
       </div>
       <div className="controller">
         <div className="arrow-container" />
-        <div className="arrow-container" onClick={() => move('up')}>
+        <div data-testid="up-button" className="arrow-container" onClick={() => move('up')}>
           <img src={up} className="up arrow" alt="up" />
         </div>
         <div className="arrow-container" />
-        <div className="arrow-container" onClick={() => move('left')}>
+        <div data-testid="left-button" className="arrow-container" onClick={() => move('left')}>
           <img src={left} className="left arrow" alt="left" />
         </div>
         <div className="arrow-container" />
-        <div className="arrow-container" onClick={() => move('right')}>
+        <div data-testid="right-button" className="arrow-container" onClick={() => move('right')}>
           <img src={right} className="right arrow" alt="right" />
         </div>
         <div className="arrow-container" />
-        <div className="arrow-container" onClick={() => move('down')}>
+        <div data-testid="down-button" className="arrow-container" onClick={() => move('down')}>
           <img src={down} className="down arrow" alt="down" />
         </div>
         <div className="arrow-container" />

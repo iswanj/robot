@@ -1,5 +1,6 @@
 const itemsPerRow = 5;
 const miniumRow = 1;
+
 export const getPosition = (x, y) => {
   return {
     top: 500 - (y * 100),
@@ -12,7 +13,7 @@ export const caluclateXValue = index => {
   if (value === 0) {
     return 1;
   }
-  return Math.abs(value - itemsPerRow -1); // reduce 1 because of box numbering start from 1;
+  return Math.abs(value - itemsPerRow -1); // reduce 1 because of min box indexe is 1;
 };
 
 export const getTeleportationCordinates = index => {
