@@ -24,19 +24,19 @@ self.__precacheManifest = [
     "url": "/robot/static/js/runtime~main.1f40da0e.js"
   },
   {
-    "revision": "c742123600d065cb5996",
-    "url": "/robot/static/js/main.c7421236.chunk.js"
+    "revision": "c4f3058205cff302ae0d",
+    "url": "/robot/static/js/main.c4f30582.chunk.js"
   },
   {
     "revision": "c6cc08c8472d4d13cfd5",
     "url": "/robot/static/js/2.c6cc08c8.chunk.js"
   },
   {
-    "revision": "c742123600d065cb5996",
+    "revision": "c4f3058205cff302ae0d",
     "url": "/robot/static/css/main.5d00d4b9.chunk.css"
   },
   {
-    "revision": "09dbe4534b5b82afb427566cc81844a1",
+    "revision": "6df5f4dc050af4694e520ba2721fa0dc",
     "url": "/robot/index.html"
   }
 ];
